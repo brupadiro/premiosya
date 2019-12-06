@@ -28,7 +28,7 @@ SECRET_KEY = '6nig&e+z#bx2=x02@6m*vpju0b$u+#3c(oxy!ato+*i^g%7ydr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','backend',"127.0.0.1:5005"]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', "127.0.0.1:5005"]
 
 
 # Application definition
@@ -36,7 +36,6 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1','backend',"127.0.0.1:5005"]
 USER_APPS = [
     'secciones.apuestas',
     'secciones.users',
-    'secciones.matches',
 ]
 SYSTEM_APPS = [
     'django.contrib.admin',
@@ -109,14 +108,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['MYSQL_DATABASE'],
-        'USER': os.environ['MYSQL_USER'],
-        'PASSWORD': os.environ['MYSQL_PASSWORD'],
-        'HOST': os.environ['MYSQL_SERVICE'],
-        'PORT': os.environ['MYSQL_PORT']
-    },
-    'cedulas': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'db.sqlite3',
     }
@@ -165,7 +156,7 @@ MEDIA_URL = '/uploads/'
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-MEDIA_ROOT= os.path.join(PROJECT_DIR, 'uploads')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'uploads')
 
 
 STATICFILES_DIRS = [
