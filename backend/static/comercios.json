@@ -1,0 +1,45 @@
+{
+  "Paysandu": [{
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }],
+  "Salto": [{
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }, {
+    "Nombre": "Nombre",
+    "Direccion": "Direccion",
+    "Telefono": "Telefono"
+  }]
+}
