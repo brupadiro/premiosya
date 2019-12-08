@@ -26,7 +26,7 @@ class Users(AbstractUser):
         default=False
     )
     
-    apuesta = models.ForeignKey(Apuesta, verbose_name=_("apuesta"), on_delete=models.CASCADE)
+    apuesta = models.ForeignKey(Apuesta, verbose_name=("apuesta"), on_delete=models.CASCADE)
 
     USERNAME_FIELD = 'username'
     class Meta:

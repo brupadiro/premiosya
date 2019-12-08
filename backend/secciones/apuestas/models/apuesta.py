@@ -4,23 +4,25 @@ from secciones.apuestas.models.juego import Juego
 class Apuesta(models.Model):
 
     cantidad_apostada = models.PositiveIntegerField()
-    fecha = models.models.DateField()
-    juego = models.OneToOneField(Juego, on_delete=models.CASCADE)
-    
+    fecha = models.DateField()
+    juego = models.ForeignKey(Juego, on_delete=models.CASCADE)
+
     #Resultados
     resultado_descanzo = models.PositiveIntegerField('resultado_descanzo')
     resultado_final = models.PositiveIntegerField('resultado_final')
-    victoria_local = models.BooleanField('victoria_local')
-    victoria_visitante = models.BooleanField('victoria_visitante')
+
     resultado_local = models.PositiveIntegerField('resultado_local')
     resultado_visitante = models.PositiveIntegerField('resultado_vistante')
+
+    def __str__(self):
+        return "Apuesta al juego {}".format(self.juego)
 
 """
 Campos relacionados a juegos
 
 apuesta 1x2:
-    victoria_local ( boolean )
-    victoria_visitante ( boolean )
+    resultado_local ( int 1 o 0 )
+    resultado_visitante ( int 1 o 0 )
 
     Es la apuesta más fácil de entender, pero también la más difícil de jugar.
     El 1 indica la victoria del equipo local,
@@ -48,10 +50,10 @@ apuesta descanzo final:
 
 apuesta devolucion empate:
 
-    victoria_local ( boolean )
-    victoria_visitante ( boolean )
+    resultado_local ( int 1 o 0 )
+    resultado_visitante ( int 1 o 0 )
 
-    if !victoria_local && !victoria_visitante => devolver cash
+    if !resultado_local && !resultado_visitante => devolver cash
 
     Gracias a este tipo de apuesta, no perderá la apuesta si un partido termina en empate.
     La casa de apuestas le devolverá el dinero en ese caso.
