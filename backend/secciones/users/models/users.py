@@ -10,6 +10,8 @@ from Crypto import Random
 from PIL import Image
 import os
 
+from secciones.apuestas.models.apuesta import Apuesta
+
 
 class Users(AbstractUser):
 
@@ -23,6 +25,9 @@ class Users(AbstractUser):
         'is_active',
         default=False
     )
+    
+    apuesta = models.ForeignKey(Apuesta, verbose_name=_("apuesta"), on_delete=models.CASCADE)
+
     USERNAME_FIELD = 'username'
     class Meta:
         ordering = ('-pk',)
