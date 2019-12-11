@@ -8,7 +8,6 @@ Pillow
 django-filter
 djangorestframework_simplejwt
 PyMySQL
-mysqlclient
 channels==1.1.8
 asgi-redis
 daphne==1.3
