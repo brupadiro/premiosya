@@ -18,3 +18,10 @@ class apuestaViewSet(viewsets.ModelViewSet):
 
 
 
+    @action(detail=False)
+    def apuesta2X1(self,request):
+
+        nombre_juego = "2X1"
+        apuestas2X1 = Apuesta.objects.filter(juego__nombre_juego=nombre_juego)
+        serializer = self.get_serializer(apuestas2X1,many=True)
+        return Response(serializer.data)
