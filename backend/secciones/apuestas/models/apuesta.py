@@ -4,7 +4,7 @@ from secciones.users.models.users import Users
 
 class Apuesta(models.Model):
 
-    user = models.ForeignKey(Users,on_delete=True)
+    user = models.ForeignKey(Users,on_delete=True,blank=False)
     #partido = models.ForeignKey(Partido,on_delete=False)
 
     class Meta:
