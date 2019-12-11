@@ -9,8 +9,8 @@ class usersSerializer(serializers.ModelSerializer):
         fields = (
             'pk',
             'nickname',
-            'username',#email
-            'phone',
+            'username',
+            'email',
             'password',
             'is_admin'
         )
@@ -21,7 +21,7 @@ class usersSerializer(serializers.ModelSerializer):
         user.nickname = data["nickname"]
         user.is_admin = False
         user.is_active = True
-        user.phone = data["phone"]
+        user.phone = data["email"]
         user.set_password(data["password"])
         user.save()
         return user

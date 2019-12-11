@@ -1,0 +1,1 @@
+from .categoriasPartidos import categoriasPartidos 

@@ -16,21 +16,5 @@ class apuestaViewSet(viewsets.ModelViewSet):
     filter_backends = (SearchFilter,DjangoFilterBackend,OrderingFilter)
     #filter_fields = ("name", "country","owner__id","owner__studio","category__id","style__id")
 
-    def create(self, request):
-        data = request.data
-        _apuestaSerializer = apuestaSerializer(data = data)
-        if _apuestaSerializer.is_valid(raise_exception = True):
-            apuesta = _apuestaSerializer.save() 
-            apuesta = apuestaSerializer(apuesta).data           
-        return Response(apuesta, status.HTTP_201_CREATED)
 
-    def update(self, request, pk = None):
-        #creo la instancia
-        instance = self.get_object()
-        data = request.data
-        _apuestaSerializer = apuestaSerializer(instance, data = data)
-        if _apuestaSerializer.is_valid(raise_exception = True):
-            _apuestaSerializer.save()
-            
-        return Response(status.HTTP_201_CREATED)
 

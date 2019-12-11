@@ -15,7 +15,7 @@ from secciones.apuestas.models.apuesta import Apuesta
 
 class Users(AbstractUser):
 
-    phone = models.IntegerField()
+    username = models.IntegerField(unique = True)
     nickname = models.CharField(max_length=150, null=True, blank=True)
     is_admin = models.BooleanField(
         'is_admin',
@@ -25,9 +25,7 @@ class Users(AbstractUser):
         'is_active',
         default=False
     )
-    
-    apuesta = models.ForeignKey(Apuesta, verbose_name=("apuesta"), on_delete=models.CASCADE)
-
+    email = models.EmailField(max_length=100)
     USERNAME_FIELD = 'username'
     class Meta:
         ordering = ('-pk',)

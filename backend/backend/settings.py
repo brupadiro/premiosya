@@ -35,7 +35,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', "127.0.0.1:5005"]
 
 USER_APPS = [
     'secciones.apuestas',
-    'secciones.users',
+    'secciones.matches',
+    'secciones.users'
 ]
 SYSTEM_APPS = [
     'django.contrib.admin',

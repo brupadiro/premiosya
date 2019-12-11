@@ -22,6 +22,7 @@ from rest_framework_simplejwt import views as jwt_views
 urlpatterns = [
     url('/', include(('secciones.users.urls','users'), namespace='users')),
     url('/', include(('secciones.apuestas.urls','projects'), namespace='apuestas')),
+    url('/', include(('secciones.matches.urls','projects'), namespace='matches')),
     url(r'^admin/', admin.site.urls),
     url('login/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     url('login/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
