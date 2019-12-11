@@ -24,7 +24,13 @@ class apuestaSerializer(serializers.ModelSerializer):
         #extra_kwargs = {'juego_name':{'write_only': True}}
 
     def create(self, validated_data):
-        juego = Juego.objects.get(nombre_juego=validated_data['nombre_juego'])
+
+        try:
+            juego = Juego.objects.get(nombre_juego=validated_data['nombre_juego'])    
+        except:
+            raise serializers.ValidationError("Nombre del juego incorrecto o inexistente")
+
+        
         apuesta = Apuesta(
             cantidad_apostada = validated_data['cantidad_apostada'],
             fecha = validated_data['fecha'],
