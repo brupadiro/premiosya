@@ -7,7 +7,8 @@ from secciones.apuestas.serializers.juego import JuegoSerializer
 from rest_framework import serializers
 
 class apuestaSerializer(serializers.ModelSerializer):
-    juego = JuegoSerializer(read_only=True)
+    data_juego = JuegoSerializer(source="juego",read_only=True)
+
     class Meta:
         model = Apuesta
         fields = [
@@ -15,6 +16,7 @@ class apuestaSerializer(serializers.ModelSerializer):
             'resultado_2',
             'created_at',
             'juego',
+            'data_juego',
             'resultado_apuesta',
             'cantidad_apostada'
         ]

@@ -38,6 +38,9 @@ class Users(AbstractUser):
 
     def get_update_url(self):
         return reverse('usuarios_usuarios_update', args=(self.pk,))
+    
+    def __str__(self):
+        return self.nickname
 
     """
     def save(self, *args, **kwargs):

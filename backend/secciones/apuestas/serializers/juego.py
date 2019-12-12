@@ -5,4 +5,4 @@ class JuegoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Juego
-        fields = '__all__'
+        exclude = ['id']

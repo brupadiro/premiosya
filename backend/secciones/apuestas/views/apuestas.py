@@ -14,14 +14,5 @@ class apuestaViewSet(viewsets.ModelViewSet):
     queryset = Apuesta.objects.all()
     serializer_class = apuestaSerializer
     filter_backends = (SearchFilter,DjangoFilterBackend,OrderingFilter)
-    #filter_fields = ("name", "country","owner__id","owner__studio","category__id","style__id")
+    filter_fields = ('juego__nombre_juego',)
 
-
-
-    @action(detail=False)
-    def apuesta2X1(self,request):
-
-        nombre_juego = "2X1"
-        apuestas2X1 = Apuesta.objects.filter(juego__nombre_juego=nombre_juego)
-        serializer = self.get_serializer(apuestas2X1,many=True)
-        return Response(serializer.data)
